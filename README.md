@@ -1,5 +1,4 @@
 # Security Incident Report
-<h1>Hacking WPA/WPA2</h1>
 
 <h2>Description</h2>
 This project is a security incident report I completed while studying for my Google Cybersecurity Certificate. A incident was reported where there was a possible brute force attack used to compromise the admin account.
@@ -7,7 +6,7 @@ This project is a security incident report I completed while studying for my Goo
 
 <h2>Lab walk-through:</h2>
 
-<p align="center">
+<p align="left">
 <strong>Step 1: Identify the network protocol involved in the incident.</strong>
  <br/>
 The protocol impacted in the incident is the Hypertext transfer protocol (HTTP). Running tcpdump and accessing the yummyrecipesforme.com website to detect the problem and capture protocol and traffic activity in a DNS & HTTP traffic log file provided the evidence needed to conclude. The malicious file is observed being transported to the users’ computers using the HTTP protocol at the application layer.
