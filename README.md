@@ -12,31 +12,12 @@ This project is a security incident report I completed while studying for my Goo
 The protocol impacted in the incident is the Hypertext transfer protocol (HTTP). Running tcpdump and accessing the yummyrecipesforme.com website to detect the problem and capture protocol and traffic activity in a DNS & HTTP traffic log file provided the evidence needed to conclude. The malicious file is observed being transported to the users’ computers using the HTTP protocol at the application layer.
 
 
-<br>
-<br>
- <br>
-<strong>Perform our reconaissance on the target and capture the WPA handshake, deauthenticate if needed:</strong>
- <br>
-<img align="center" alt="Coding" width="400" height="150" src="https://github.com/cabby1234/HackingWPA2Lab/assets/131496256/de076149-e800-4c3c-9138-876a1df4bf30">
-<br>
-<br>
-<br>
-<strong>The capture of our WPA handshake pulled up in Wireshark:</strong>
-<br>
-<img align="center" alt="Coding" width="400" height="150" src="https://github.com/cabby1234/HackingWPA2Lab/assets/131496256/bb486f75-80e9-466b-afb4-bba0030f9206">
-<br>
-<br>
- <br>
-<strong>Aircrack-ng command to obtain the wireless keys, using the rockyou.txt wordlist:</strong>
-<br>
-<img align="center" alt="Coding" width="400" height="150" src="https://github.com/cabby1234/HackingWPA2Lab/assets/131496256/0a4f0847-8700-46ac-bb0e-047f1191e6f7">
-<br>
-<br>
- <br>
-<strong>After running the command we were able to obtain the keys in seconds. (Keys are blocked out to maintain lab integrity)</strong>
-<br>
-<img align="center" alt="Coding" width="400" height="150" src="https://github.com/cabby1234/HackingWPA2Lab/assets/131496256/9a7ff105-3b76-4ec3-97ae-c80ec7cb94fc">
-
+<p align="left">
+<strong>Step 2: Document the incident.</strong>
+ <br/>
+Several customers contacted the website owner, stating that when they visited the website, they were prompted to download and run a file that asked them to update their browsers. Their personal computers have been operating
+slowly ever since. The website owner tried logging into the web server but
+noticed they were locked out of their account. The cybersecurity analyst used a sandbox environment to test the website without impacting the company network. Then, the analyst ran tcpdump to capture the network and protocol traffic packets produced by interacting with the website. The analyst was prompted to download a file claiming it would update the user’s browser, accepted the download, and ran it. The browser then redirected the analyst to a fake website (greatrecipesforme.com) that looked identical to the original site (yummyrecipesforme.com). The cybersecurity analyst inspected the tcpdump log and observed that the browser initially requested the IP address for the yummyrecipesforme.com website. Once the connection with the website was established over the HTTP protocol, the analyst recalled downloading and executing the file. The logs showed a sudden change in network traffic as the browser requested a new IP resolution for the greatrecipesforme.com URL. The network traffic was then rerouted to the new IP address for the greatrecipesforme.com website. The senior cybersecurity professional analyzed the source code for the websites and the downloaded file. The analyst discovered that an attacker had manipulated the website to add code that prompted the users to download a malicious file disguised as a browser update. Since the website owner stated they had been locked out of their administrator account, the team believes the attacker used a brute force attack to access the account and change the admin password. The execution of the malicious file compromised the end users’ computers.
 
 
 
