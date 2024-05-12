@@ -4,7 +4,7 @@
 This project is a security incident report I completed while studying for my Google Cybersecurity Certificate. A incident was reported where there was a possible brute force attack used to compromise the admin account.
 <br />
 
-<h2>Lab walk-through:</h2>
+<h2>Lab Walk-through:</h2>
 
 <p align="left">
 <strong>Step 1: Identify the network protocol involved in the incident...</strong>
